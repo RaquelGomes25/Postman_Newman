@@ -6,15 +6,9 @@ on:
 jobs:
   test-api:
     runs-on: ubuntu-latest
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
 
       # INstall Node on the runner
       - name: Install Node
@@ -44,6 +38,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: RunReports
-          path: testResults
-
-     
+          path: testResults     
